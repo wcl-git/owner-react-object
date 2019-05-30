@@ -1,5 +1,5 @@
 # owner-react-object
-从零构建 react 项目
+从零构建 react 项目， 这里接入了 按需加载，redux，使用 loader-babel8.
 
 
 ## 安装

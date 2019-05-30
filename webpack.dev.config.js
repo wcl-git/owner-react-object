@@ -2,10 +2,7 @@
 const path = require('path')
 
 module.exports = {
-  entry: [
-    'react-hot-loader/patch',
-    path.join(__dirname, 'src/index.js')
-  ],
+  entry: path.join(__dirname, 'src/index.js'),
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
@@ -15,7 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader?cacheDirectory=true'],
+        loader: 'babel-loader',
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/
       },
