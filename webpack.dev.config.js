@@ -6,12 +6,13 @@ module.exports = {
   output: {
     path: path.join(__dirname, './dist'),
     filename: 'bundle.js',
-    chunkFilename: '[name].js'
+    chunkFilename: '[name].js',
+    // publicPath: '/'
   },
   module:{
     rules: [
       {
-        test: /\.js$/,
+        test: /\.j(s|sx)$/,
         loader: 'babel-loader',
         include: path.join(__dirname, 'src'),
         exclude: /node_modules/
@@ -39,11 +40,12 @@ module.exports = {
   resolve: {
     alias: {
       pages: path.join(__dirname, 'src/pages'),
-      component: path.join(__dirname, 'src/component'),
+      components: path.join(__dirname, 'src/components'),
       router: path.join(__dirname, 'src/router'),
-      reducers: path.join(__dirname, 'src/redux/reducers'),
-      actions: path.join(__dirname, 'src/redux/actions')
-    }
+      reducers: path.join(__dirname, 'src/reducers'),
+      actions: path.join(__dirname, 'src/actions')
+    },
+    extensions: ['.js', '.jsx']
   },
-  devtool: 'inline-source-map'
+  devtool: 'inline-source-map',
 }

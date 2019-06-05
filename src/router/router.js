@@ -48,22 +48,26 @@ const Loading = ({ error }) => {
 // );
 // 加急弹出层页面
 const Home = Loadable({
-  loader: () => import(/* webpackChumkName: "Home" */'../pages/Home/Home'),
+  loader: () => import(/* webpackChunkName: "Home" */ '../pages/Home/Home'),
   loading: Loading,
 });
 const Page1 = Loadable({
-  loader: () => import(/* webpackChumkName: "Page1" */'../pages/Page1/Page1'),
+  loader: () => import(/* webpackChunkName: "Page1" */ '../pages/Page1/Page1'),
   loading: Loading,
 });
 const Counter = Loadable({
-  loader: () => import(/* webpackChumkName: "Counter" */'../pages/Counter/Counter'),
+  loader: () => import(/* webpackChunkName: "Counter" */ '../pages/Counter/Counter'),
   loading: Loading,
 });
 const UserInfo = Loadable({
-  loader: () => import(/* webpackChumkName: "UserInfo" */'../pages/UserInfo/UserInfo'),
+  loader: () => import(/* webpackChunkName: "UserInfo" */ '../pages/UserInfo/UserInfo'),
   loading: Loading,
 });
 
+const TestButton = Loadable({
+  loader: () => import(/* webpackChunkName: "TestButton" */ '../pages/Button'),
+  loading: Loading,
+})
 
 const getRouter = () => (
   <Router>
@@ -80,6 +84,7 @@ const getRouter = () => (
         <Route path="/page1" component={Page1} />
         <Route path="/counter" component={Counter} />
         <Route path="/userinfo" component={UserInfo} />
+        <Route path="/TestButton" component={TestButton} />
       </Switch>
     </div>
   </Router>

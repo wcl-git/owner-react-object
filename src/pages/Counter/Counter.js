@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
-import {increment, decrement, reset} from '../../redux/actions/counter'
+import {increment, decrement, reset} from 'actions/counter'
 
 class Counter extends Component {
 
